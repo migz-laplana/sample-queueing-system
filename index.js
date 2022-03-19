@@ -50,17 +50,17 @@ app.post("/serveNextQueue", (req, res) => {
   const allQueueDates = queues.map((item) => item.dateCreated);
   const nextQueueDate = min(allQueueDates);
 
-  const nextQueue = queues.find(
-    (item) => new Date(item.dateCreated).getTime() === nextQueueDate.getTime()
-  );
+
   const nextQueueIndex = queues.findIndex(
     (item) => new Date(item.dateCreated).getTime() === nextQueueDate.getTime()
   );
+  const nextQueueToBeRemoved = queues[nextQueueIndex];
+
   queues.splice(nextQueueIndex, 1);
 
   res.status(200).send({
     data: {
-      itemRemoved: nextQueue,
+      itemRemoved: nextQueueToBeRemoved,
       currentQueue: queues,
     },
   });

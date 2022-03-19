@@ -9,7 +9,7 @@ const PORT = 3000;
 const queues = [];
 
 app.get("/", (req, res) => {
-  res.send({ message: "Welcome to the Simple Queueing System" });
+  res.send({ message: "Welcome to the Sample Queueing System" });
 });
 
 app.get("/getAllQueues", (req, res) => {

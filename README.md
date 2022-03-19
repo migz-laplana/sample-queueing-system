@@ -29,3 +29,7 @@ Sample request body:
 
 ### POST /serveNextQueue
 - removes the next item in queue from the queue itself. Calling this endpoint returns the queue item removed as well as the resulting queue after said item has been removed/dequeued.
+
+
+## Notes
+- queue is just a local array; not yet connected to a database
